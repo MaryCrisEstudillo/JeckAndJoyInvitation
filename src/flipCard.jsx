@@ -13,7 +13,7 @@ const FlipCard = () => {
     }
     const transitionEndListener = () => {
       document.removeEventListener('transitionend', transitionEndListener);
-      navigate('/mainPage');
+      navigate('mainPage');
       // window.location.href = '/JeckAndJoyInvitation/mainPage'
     };
 

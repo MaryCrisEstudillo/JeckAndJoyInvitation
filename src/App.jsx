@@ -9,7 +9,7 @@ function App() {
     <HashRouter>
     <Routes>
     <Route path="/" element={<FlipCard />} />
-    <Route path="/mainPage" element={<CardPage/>} />
+    <Route path="mainPage" element={<CardPage/>} />
     </Routes>
   </HashRouter>
   )
