@@ -7,11 +7,10 @@ import './index.css'
 function App() {
     const renderPage = () => {
     const currentPath = window.location.pathname;
-          if (currentPath === '/JeckAndJoyInvitation/') {
-      return <FlipCard />;
-    }else if (currentPath === '/JeckAndJoyInvitation/mainPage'){
-      return <CardPage/>
+          if (currentPath === '/JeckAndJoyInvitation/mainPage') {
+      return <CardPage/>;
     }
+    return <FlipCard/>
   };
   return (
         <div>
