@@ -1,9 +1,12 @@
 import './App.css'
+import FlipCard from "./flipCard"
 
 function App() {
 
   return (
-    <div>totoo nba</div>
+    <div className="h-screen flex items-center justify-center bg-[#cfd3cc]">
+      <FlipCard/>
+    </div>
   )
 }
 
