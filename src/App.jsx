@@ -2,16 +2,16 @@ import './App.css'
 import FlipCard from "./flipCard"
 import CardPage from './cardPage';
 import './index.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
     <Routes>
-    <Route path="/JeckAndJoyInvitation/" element={<FlipCard />} />
-    <Route path="/JeckAndJoyInvitation/mainPage" element={<CardPage/>} />
+    <Route path="/" element={<FlipCard />} />
+    <Route path="/mainPage" element={<CardPage/>} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
   )
 }
 
