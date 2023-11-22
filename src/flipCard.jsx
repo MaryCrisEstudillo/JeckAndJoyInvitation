@@ -1,10 +1,10 @@
 import "./flipCard.css"; // Import your CSS file
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
 import jeck from "./assets/jeckAndJoy.png";
 
 const FlipCard = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isFlipped, setFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -13,8 +13,8 @@ const FlipCard = () => {
     }
     const transitionEndListener = () => {
       document.removeEventListener('transitionend', transitionEndListener);
-      // navigate('/JeckAndJoyInvitation/mainPage');
-      window.location.href = '/JeckAndJoyInvitation/mainPage'
+      navigate('/JeckAndJoyInvitation/mainPage');
+      // window.location.href = '/JeckAndJoyInvitation/mainPage'
     };
 
     document.addEventListener('transitionend', transitionEndListener);
