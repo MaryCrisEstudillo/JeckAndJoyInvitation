@@ -1,5 +1,59 @@
+.anim {
+  opacity: 0;
+}
+
+.vert {
+  opacity: 0;
+}
+
 .animRight {
   opacity: 0;
+}
+
+.animLeft {
+  opacity: 0;
+}
+
+@-webkit-keyframes anim1H {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim1H {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes anim2V {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+}
+@keyframes anim2V {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
 }
 @-webkit-keyframes animRight {
   from {
@@ -21,3 +75,23 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes animLeft {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+}
+@keyframes animLeft {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */

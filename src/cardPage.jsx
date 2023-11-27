@@ -4,9 +4,47 @@ import flowers from "./assets/flowers.png"
 
 function CardPage () {
 
-    const animationR = document.querySelectorAll('.animRight');
+////////// horizontal/////////////////////////////////////
+const images = document.querySelectorAll('.anim');
     
-let observer = new IntersectionObserver((entries) => {
+const observerss = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+        if(entry.intersectionRatio > 0) {
+        entry.target.style.animation = `anim1H 2s ${entry.target.dataset.delay} forwards ease-out`;
+        }
+        else {
+        entry.target.style.animation = 'none';
+        }
+    })
+})  
+
+images.forEach(image => {
+       observerss.observe(image)
+})
+
+/////////////// VERTICAL //////////////////////////////////
+const verticals = document.querySelectorAll('.vert');
+
+const observersss = new IntersectionObserver((verties) => {
+
+    verties.forEach(verty => {
+            if(verty.intersectionRatio > 0) {
+            verty.target.style.animation = `anim2V 2s ${verty.target.dataset.delay} forwards ease-out`;
+            }
+            else {
+            verty.target.style.animation = 'none';
+            }
+        })
+    })
+verticals.forEach(vertical => {
+    observersss.observe(vertical)
+})
+
+/////////////// RIGHT //////////////////////////////////
+const animationR = document.querySelectorAll('.animRight');
+    
+const observers = new IntersectionObserver((entries) => {
 
 entries.forEach(entry => {
         if(entry.intersectionRatio > 0) {
@@ -19,8 +57,27 @@ entries.forEach(entry => {
 })  
 
 animationR.forEach(animV => {
-       observer.observe(animV)
+       observers.observe(animV)
 })
+/////////////// LEFT //////////////////////////////////
+const animationL = document.querySelectorAll('.animLeft');
+    
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+        if(entry.intersectionRatio > 0) {
+        entry.target.style.animation = `animLeft 2s ${entry.target.dataset.delay} forwards ease-out`;
+        }
+        else {
+        entry.target.style.animation = 'none';
+        }
+    })
+})  
+
+animationL.forEach(animL => {
+       observer.observe(animL)
+})
+    
 
     return (
         <div className="h-screen relative w-screen flex flex-col" style={{ backgroundImage: `url(${flowers})`, backgroundRepeat: 'repeat' }}>
@@ -39,17 +96,17 @@ animationR.forEach(animV => {
             <img className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]" src={hands} alt="holding hands" />
             </div>
             {/* bg-[#0d5d82] */}
-            <div className="flex w-full flex-col mobile:gap-40 laptop:gap-0 tablet:gap-0 animate-enter">
+            <div className="flex w-full flex-col mobile:gap-40 laptop:gap-0 tablet:gap-0">
                 <div className="flex grow z-30 justify-start">
-                <div className="flex min-w-[50%] flex-col text-center items-center text-white bg-[#0d5d82] p-[5%]">
-                            <p className="font-normal font-serif text-7xl mb-5 animRight" data-delay=".2s">Wedding Details</p>
-                            <p className="font-normal text-2xl animRight" data-delay=".3s">Date</p>
-                            <p className="font-light text-xl animRight" data-delay=".3s">January 8th. 2023</p>
-                            <p className="font-light text-xl mb-3 animRight" data-delay=".3s">2:00 PM - 5:00 PM</p>
-                            <p className="font-normal text-2xl animRight" data-delay=".3s">Reception Location</p>
-                            <p className="font-light text-xl mb-3 animRight" data-delay=".3s">Gem&apos;s Hotel Antipolo City</p>
-                            <p className="font-normal text-2xl animRight" data-delay=".3s">Attire</p>
-                            <p className="font-light text-xl animRight" data-delay=".3s">Formal</p>
+                <div className="flex min-w-[50%] flex-col text-center items-center text-white bg-[#0d5d82] p-[5%] anim" data-delay=".2s">
+                            <p className="font-normal font-serif text-7xl mb-5">Wedding Details</p>
+                            <p className="font-normal text-2xl">Date</p>
+                            <p className="font-light text-xl">January 8th. 2023</p>
+                            <p className="font-light text-xl mb-3">2:00 PM - 5:00 PM</p> 
+                            <p className="font-normal text-2xl">Reception Location</p>
+                            <p className="font-light text-xl mb-3">Gem&apos;s Hotel Antipolo City</p>
+                            <p className="font-normal text-2xl">Attire</p>
+                            <p className="font-light text-xl">Formal</p>
                 </div>
                 </div>
 
@@ -80,12 +137,7 @@ animationR.forEach(animV => {
                             Gcash: 09353111839 / 09227374929
                             </p>
             </div>
-            {/* <div className="z-0 absolute bg-[white]">
-             <img className="min-w-[1300px] object-cover" src={flowers} alt="flowers" />
-            </div> */}
         </div>
     )
 }
-// ml-[-35em] laptop:ml-[0px] desktop:ml-[0px] tablet:ml-[-30em]
-// min-w-[1700px]
 export default CardPage;
