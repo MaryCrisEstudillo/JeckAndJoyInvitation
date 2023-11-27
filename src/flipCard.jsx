@@ -20,8 +20,10 @@ const FlipCard = () => {
     document.addEventListener('transitionend', transitionEndListener);
     setFlipped(true);
   };
+  // bg-[#0d5d82]
+  // bg-[#cfd3cc]
   return (
-    <div className="h-screen flex items-center justify-center bg-[#cfd3cc]">
+    <div className="h-screen flex items-center justify-center bg-[#0d5d82]">
     <div className={`flip-card ${isFlipped ? 'flipped' : ''} desktop:w-[550px] desktop:h-[650px] tablet:w-[450px] tablet:h-[600px] laptop:w-[550px] laptop:h-[650px] w-[300px] h-[300px]`} onClick={handleFlip}>
       <div className="flip-card-inner">
         <div className="flip-card-front bg-[white] px-5 flex flex-col">
