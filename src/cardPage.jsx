@@ -55,7 +55,8 @@ function CardPage () {
             <LazyLoadImage src={flowers}
             placeholderSrc={flowers}
         className="w-screen min-w-[1500px] z-0 fixed object-cover mt-[-100px]"
-        alt="Image Alt"
+        alt="holding hands"
+        effect="blur"
       />
             <div className="flex w-screen justify-center gap-1 font-sans text-[1.3em] text-[white] font-extralight z-40 py-[10px] py-3">
                         <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-l-full min-w-[70px] w-[100px]">{daysCount}<p className="text-[.4em]">Days</p></span>
