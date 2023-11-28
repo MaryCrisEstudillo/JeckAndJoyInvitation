@@ -83,12 +83,7 @@ function CardPage () {
                      className="font-light mt-5 md:mt-2 font-sans text-2xl text-white tracking-widest">PSALM 118:24</motion.p>
                 </motion.div>
                 </div>
-             <LazyLoadImage 
-             src={hands}
-            placeholderSrc={hands}
-            className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]"
-            alt="holdingHands"
-            />
+                <img className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]" src={hands} alt="holding hands" />
             </div>
             <div className="flex w-full flex-col smallMobile:gap-32 laptop:gap-0 tablet:gap-0">
                 <div className="flex grow z-30 justify-start">
@@ -100,7 +95,7 @@ function CardPage () {
                     delay: 0.5,
                     ease: [0, 0.71, 0.2, 1.01]
                   }}
-                className={`flex min-w-[50%] laptop:min-w-[50%] tablet:min-w-[50%] smallMobile:min-w-[100%] mt-[-6px] flex-col text-center items-center text-[white] bg-[#0d5d82] p-[5%]`} >
+                className={`flex min-w-[50%] laptop:min-w-[50%] tablet:min-w-[50%] smallMobile:min-w-[100%] flex-col text-center items-center text-[white] bg-[#0d5d82] p-[5%]`} >
                             <p className="font-bold font-sans text-6xl opacity-30 mb-5">Wedding Details</p>
                             <p className="font-bold text-2xl opacity-50">Date</p>
                             <p className="font-light text-xl">January 8th. 2023</p>
