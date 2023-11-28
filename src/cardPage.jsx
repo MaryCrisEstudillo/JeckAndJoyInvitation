@@ -14,12 +14,20 @@ function CardPage () {
             </div>
             <div className="z-30 relative min-w-[1700px] desktop:min-w-full laptop:w-screen">
              <div className="absolute w-screen mt-52 z-20">
-                <div className="w-full h-[20%] text-center justify-center items-center">
+                <motion.div
+                    initial={{ opacity: 0, y:"500px"}}
+                    whileInView={{ opacity: 1 , y:0}}
+                    transition={{
+                    duration: 3,
+                    delay: 0.2,
+                    ease: [0, 0.71, 0.2, 1.01]
+                  }}
+                 className="w-full h-[20%] text-center justify-center items-center">
                     <span className="font-light px-2 font-serif text-3xl laptop:text-6xl desktop:6xl mobile:text-5xl text-white tracking-widest">JACOB</span>
                     <span className="font-normal px-2 font-serif text-2xl laptop:text-4xl desktop:4xl mobile:text-xl text-white">&</span>
                     <span className="font-light  px-2 font-serif text-3xl laptop:text-6xl desktop:6xl mobile:text-5xl text-white tracking-widest">JOY</span>
                     <p className="font-thin mt-5 md:mt-2 font-sans text-2xl laptop:text-4xl desktop:4xl mobile:text-xl text-white tracking-widest">PSALM 118:24</p>
-                </div>
+                </motion.div>
             </div>
             <img className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]" src={hands} alt="holding hands" />
             </div>
@@ -30,8 +38,8 @@ function CardPage () {
                   initial={{ opacity: 0, x:"-500px"}}
                   whileInView={{ opacity: 1 , x:0}}
                 transition={{
-                    duration: 1,
-                    delay: 0.5,
+                    duration: 3,
+                    delay: 0.2,
                     ease: [0, 0.71, 0.2, 1.01]
                   }}
                 className={`flex min-w-[50%] flex-col text-center items-center text-white bg-[#0d5d82] p-[5%]`} >
@@ -47,14 +55,13 @@ function CardPage () {
                 </div>
 
                 <motion.div 
-                                  initial={{ opacity: 0, x:"500px"}}
-                                  whileInView={{ opacity: 1 , x:0}}
-                                //   transition={{delay: 0.3}}
-                                transition={{
-                                    duration: 1,
-                                    delay: 0.5,
-                                    ease: [0, 0.71, 0.2, 1.01]
-                                  }}
+                    initial={{ opacity: 0, x:"500px"}}
+                    whileInView={{ opacity: 1 , x:0}}
+                    transition={{
+                         duration: 3,
+                         delay: 0.2,
+                         ease: [0, 0.71, 0.2, 1.01]
+                        }}
                 className="flex grow z-30 justify-end">
                 <div className="flex min-w-[50%] flex-col text-center items-center text-white bg-[#0d5d82] p-[5%]">
                             <p className="font-normal font-serif text-7xl mb-5">Guests Attire</p>
@@ -71,7 +78,15 @@ function CardPage () {
                 </div>
                 </motion.div>
             </div>
-            <div className="flex w-full flex-col grow z-30 min-w-[50%] text-center items-center text-white bg-[#1b3544] p-[5%]">
+            <motion.div
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1}}
+                    transition={{
+                         duration: 2.5,
+                         delay: 0.2,
+                         ease: [0, 0.71, 0.2, 1.01]
+                        }}
+             className="flex w-full flex-col grow z-30 min-w-[50%] text-center items-center text-white bg-[#1b3544] p-[5%]">
             <p className="font-thin font-serif text-4xl pb-5">A Note from Bride and Groom</p>
                     <p className="font-light text-lg leading-8">In this celebration of love&apos;s sweet reign,
                             We invite you to join and share our joyous train.
@@ -81,7 +96,7 @@ function CardPage () {
                             <p className="font-light text-lg leading-8">
                             Gcash: 09353111839 / 09227374929
                             </p>
-            </div>
+            </motion.div>
         </div>
     )
 }
