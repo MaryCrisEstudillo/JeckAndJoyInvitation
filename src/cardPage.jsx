@@ -3,7 +3,6 @@ import hands from "./assets/hands.png"
 import flowers from "./assets/flowers.png"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CardPage () {
     const [daysCount, setdays] = useState(0);
