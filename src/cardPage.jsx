@@ -1,21 +1,66 @@
 import "./cardPage.css"
-import { useRef } from "react";
 import hands from "./assets/hands.png"
 import flowers from "./assets/flowers.png"
 import { motion } from "framer-motion"
-
+import { useState, useRef, useEffect } from "react"
 
 function CardPage () {
+    const [daysCount, setdays] = useState(0);
+    const [hoursCount, setHours] = useState(0);
+    const [minutesCount, setMinutes] = useState(0);
+    const [secondsCount, setSeconds] = useState(0);
 
+    let interval = useRef();
+
+    const timer = () => {
+        const countDown = new Date('January 8, 2024 00:00:00').getTime();
+        interval = setInterval(()=>{
+            const now = new Date().getTime();
+            const distance = countDown - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+            const minutes = Math.floor((distance % (1000 * 60 * 60 )) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const convertDays = days < 10? `${0}${days}` : days;
+            const convertHours = hours < 10? `${0}${hours}` : hours;
+            const convertMinutes = minutes < 10? `${0}${minutes}` : minutes;
+            const convertSeconds = seconds < 10? `${0}${seconds}` : seconds;
+
+            if (distance < 0){
+                clearInterval(interval.current);
+            } else {
+                setdays(convertDays);
+                setHours(convertHours);
+                setMinutes(convertMinutes);
+                setSeconds(convertSeconds);
+            }
+        }, 1000)
+    };
+
+    useEffect(()=> {
+        timer();
+        return () => {
+            clearInterval(interval.current);
+        }
+    },[]);
+
+
+    console.log({"days": daysCount, "hours": hoursCount, "minutes": minutesCount, "seconds": secondsCount });
     return (
-        <div className="h-screen relative w-screen flex flex-col" style={{ backgroundImage: `url(${flowers})`, backgroundRepeat: 'repeat' }}>
+        <div className="h-screen relative w-screen flex flex-col">
             <img className="min-w-[1700px] z-0 fixed object-cover" src={flowers} alt="flowers" />
-            <div className="w-screen z-40 py-[40px] bg-[#0d5d82]">
+            <div className="flex w-screen justify-center gap-1 font-sans text-[1.5em] text-[white] font-extralight z-40 py-[10px] bg-[#0d5d82]">
+                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center rounded-l-full min-w-[70px] w-[100px]">{daysCount}<p className="text-[.5em]">Days</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center w-[100px] min-w-[70px]">{hoursCount}<p className="text-[.5em]">Hrs</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center w-[100px] min-w-[70px]">{minutesCount}<p className="text-[.5em]">Mins</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center rounded-r-full w-[100px] min-w-[70px]">{secondsCount}<p className="text-[.5em]">Secs</p></span>
             </div>
             <div className="z-30 relative min-w-[1700px] desktop:min-w-full laptop:w-screen">
              <div className="absolute w-screen mt-52 z-20">
                 <motion.div
-                    initial={{ opacity: 0, y:"500px"}}
+                    initial={{ opacity: 0, y:"-200px"}}
                     whileInView={{ opacity: 1 , y:0}}
                     transition={{
                     duration: 3,
@@ -26,10 +71,18 @@ function CardPage () {
                     <span className="font-light px-2 font-serif text-3xl laptop:text-6xl desktop:6xl mobile:text-5xl text-white tracking-widest">JACOB</span>
                     <span className="font-normal px-2 font-serif text-2xl laptop:text-4xl desktop:4xl mobile:text-xl text-white">&</span>
                     <span className="font-light  px-2 font-serif text-3xl laptop:text-6xl desktop:6xl mobile:text-5xl text-white tracking-widest">JOY</span>
-                    <p className="font-thin mt-5 md:mt-2 font-sans text-2xl laptop:text-4xl desktop:4xl mobile:text-xl text-white tracking-widest">PSALM 118:24</p>
+                    <motion.p
+                    initial={{ opacity: 0,}}
+                    whileInView={{ opacity: 1}}
+                    transition={{
+                    duration: 4,
+                    delay: 2,
+                    ease: [0, 0.71, 0.2, 1.01]
+                  }}
+                     className="font-thin mt-5 md:mt-2 font-sans text-2xl laptop:text-4xl desktop:4xl mobile:text-xl text-white tracking-widest">PSALM 118:24</motion.p>
                 </motion.div>
-            </div>
-            <img className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]" src={hands} alt="holding hands" />
+                </div>
+                <img className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]" src={hands} alt="holding hands" />
             </div>
             {/* bg-[#0d5d82] */}
             <div className="flex w-full flex-col mobile:gap-40 laptop:gap-0 tablet:gap-0">
