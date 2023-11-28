@@ -3,6 +3,7 @@ import hands from "./assets/hands.png"
 import flowers from "./assets/flowers.png"
 import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CardPage () {
     const [daysCount, setdays] = useState(0);
@@ -50,7 +51,12 @@ function CardPage () {
     console.log({"days": daysCount, "hours": hoursCount, "minutes": minutesCount, "seconds": secondsCount });
     return (
         <div className="h-screen relative w-screen flex flex-col">
-            <img className="w-screen min-w-[1500px] z-0 fixed object-cover mt-[-100px]" src={flowers} alt="flowers" />
+            {/* <img className="w-screen min-w-[1500px] z-0 fixed object-cover mt-[-100px]" src={flowers} alt="flowers" /> */}
+            <LazyLoadImage src={flowers}
+            placeholderSrc={flowers}
+        className="w-screen min-w-[1500px] z-0 fixed object-cover mt-[-100px]"
+        alt="Image Alt"
+      />
             <div className="flex w-screen justify-center gap-1 font-sans text-[1.3em] text-[white] font-extralight z-40 py-[10px] py-3">
                         <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-l-full min-w-[70px] w-[100px]">{daysCount}<p className="text-[.4em]">Days</p></span>
                         <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center w-[100px] min-w-[70px]">{hoursCount}<p className="text-[.4em]">Hours</p></span>
