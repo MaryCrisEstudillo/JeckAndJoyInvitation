@@ -51,10 +51,10 @@ function CardPage () {
     return (
         <div className="h-screen relative w-screen flex flex-col">
             <img className="w-screen min-w-[1500px] z-0 fixed object-cover" src={flowers} alt="flowers" />
-            <div className="flex w-screen justify-center gap-1 font-sans text-[1.8em] text-[white] font-extralight z-40 py-[10px] bg-[#0d5d82]">
+            <div className="flex w-screen justify-center gap-1 font-sans text-[1.3em] text-[white] font-extralight z-40 py-[10px] bg-[#0d5d82] py-5">
                         <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center rounded-l-full min-w-[70px] w-[100px]">{daysCount}<p className="text-[.5em]">Days</p></span>
-                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center w-[100px] min-w-[70px]">{hoursCount}<p className="text-[.5em]">Hrs</p></span>
-                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center w-[100px] min-w-[70px]">{minutesCount}<p className="text-[.5em]">Mins</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center w-[100px] min-w-[70px]">{hoursCount}<p className="text-[.3em]">Hrs</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center w-[100px] min-w-[70px]">{minutesCount}<p className="text-[.3em]">Mins</p></span>
                         <span className="drop-shadow-lg bg-[#0d5d82] py-3 text-center rounded-r-full w-[100px] min-w-[70px]">{secondsCount}<p className="text-[.5em]">Secs</p></span>
             </div>
             <div className="z-30 relative min-w-[1700px] desktop:min-w-full laptop:w-screen">
