@@ -23,6 +23,20 @@ code {
   box-sizing: border-box;
 }
 
+#animatedSection {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#animatedSection.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -1,2 +1,16 @@
 
 /*# sourceMappingURL=styles.css.map */
+#animatedSection {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  #animatedSection.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
