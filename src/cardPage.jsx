@@ -51,46 +51,60 @@ function CardPage () {
     return (
         <div className="h-screen relative w-screen flex flex-col">
             <img className="w-screen min-w-[1500px] z-0 fixed object-cover mt-[-100px]" src={flowers} alt="flowers" />
-            <div className="flex w-screen justify-center gap-1 font-sans text-[1.3em] text-[white] font-extralight z-40 py-[10px] py-3">
-                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-l-full min-w-[70px] w-[100px]">{daysCount}<p className="text-[.4em]">Days</p></span>
-                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center w-[100px] min-w-[70px]">{hoursCount}<p className="text-[.4em]">Hours</p></span>
-                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center w-[100px] min-w-[70px]">{minutesCount}<p className="text-[.4em]">Minutes</p></span>
-                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-r-full w-[100px] min-w-[70px]">{secondsCount}<p className="text-[.4em]">Seconds</p></span>
-            </div>
+            {/* <div className="flex w-screen justify-center gap-1 font-sans text-[1.3em] text-[white] font-extralight z-40 py-[10px] py-3">
+                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-md min-w-[70px] w-[100px]">{daysCount}<p className="text-[.4em]">DAYS</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-md w-[100px] min-w-[70px]">{hoursCount}<p className="text-[.4em]">HOURS</p></span>
+                        <span className="drop-shadow-lg bg-[#0d5d82] opacity-95 py-3 text-center rounded-md w-[100px] min-w-[70px]">{minutesCount}<p className="text-[.4em]">MIN</p></span>
+            </div> */}
             <div className="z-30 relative min-w-[1700px] desktop:min-w-full laptop:w-screen">
-             <div className="absolute w-screen mt-52 z-20">
-                <motion.div
-                    initial={{ opacity: 0, y:"-200px"}}
-                    whileInView={{ opacity: 1 , y:0}}
-                    transition={{
-                    duration: 3,
-                    delay: 0.2,
-                    ease: [0, 0.71, 0.2, 1.01]
-                  }}
-                 className="w-full h-[20%] text-center justify-center items-center">
-                    <span className="font-bold px-2 font-sans text-5xl text-white tracking-widest">JACOB</span>
-                    <span className="font-light px-2 font-sans text-xl text-white">&</span>
-                    <span className="font-bold  px-2 font-sans text-5xl text-white tracking-widest">JOY</span>
-                    <motion.p
-                    initial={{ opacity: 0,}}
-                    whileInView={{ opacity: 1}}
-                    transition={{
-                    duration: 4,
-                    delay: 2,
-                    ease: [0, 0.71, 0.2, 1.01]
-                  }}
-                     className="font-light mt-5 md:mt-2 font-sans text-2xl text-white tracking-widest">PSALM 118:24</motion.p>
-                </motion.div>
+                <div className="absolute w-screen mt-10 z-20">
+                    <div className="flex flex-col w-screen mt-[-40px] items-center font-sans text-[white] mb-20 font-extrabold z-40 py-[10px] py-3">
+                        <div className="flex flex-col laptop:flex-row items-center justify-center ">
+                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[4em]  rounded-md">{daysCount}</span>
+                        <span className="font-light mt-[-30px] opacity-30">DAYS</span>
+                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[4em] rounded-md">{hoursCount}</span>
+                        <span className="font-light mt-[-30px] opacity-30">HOURS</span>
+                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[4em] rounded-md">{minutesCount}</span>
+                        <span className="font-light mt-[-30px] opacity-30">MIN</span>
+                       </div>
+                        {/* <div className="flex gap-[19em] mt-[-55px]">
+                        <span className="font-light">DAYS</span>
+                        <span className="font-light">HOURS</span>
+                        <span className="font-light">MIN</span>
+                        </div> */}
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y:"-200px"}}
+                        whileInView={{ opacity: 1 , y:0}}
+                        transition={{
+                        duration: 3,
+                        delay: 0.2,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }}
+                    className="w-full h-[20%] text-center justify-center items-center">
+                        <span className="font-bold px-2 font-sans text-5xl text-white tracking-widest">JACOB</span>
+                        <span className="font-light px-2 font-sans text-xl text-white">&</span>
+                        <span className="font-bold  px-2 font-sans text-5xl text-white tracking-widest">JOY</span>
+                        <motion.p
+                        initial={{ opacity: 0,}}
+                        whileInView={{ opacity: 1,}}
+                        transition={{
+                        duration: 3,
+                        delay: 2,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }}
+                        className="font-light mt-5 md:mt-2 font-sans text-2xl text-white tracking-widest">PSALM 118:24</motion.p>
+                    </motion.div>
                 </div>
                 <img className="z-10 ml-[-40em] laptop:ml-[-30px] desktop:ml-[0px] tablet:ml-[-20em]" src={hands} alt="holding hands" />
             </div>
             <div className="flex w-full flex-col smallMobile:gap-32 laptop:gap-0 tablet:gap-0">
                 <div className="flex grow z-30 justify-start">
                 <motion.div  
-                  initial={{ opacity: 0}}
-                  whileInView={{ opacity: 1}}
+                  initial={{ opacity: 0, y:"-100px"}}
+                  whileInView={{ opacity: 1, y:0}}
                 transition={{
-                    duration: 4,
+                    duration: 2,
                     delay: 0.5,
                     ease: [0, 0.71, 0.2, 1.01]
                   }}
@@ -107,18 +121,18 @@ function CardPage () {
                 <div 
                 className="flex grow z-30 justify-end">
                 <motion.div 
-                   initial={{ opacity: 0}}
-                whileInView={{ opacity: 1}}
+                   initial={{ opacity: 0, y:"100px"}}
+                whileInView={{ opacity: 1, y:0}}
                 transition={{
-                     duration: 4,
+                     duration: 2,
                      delay: 0.5,
                      ease: [0, 0.71, 0.2, 1.01]
                     }}
-                className="flex min-w-[50%] laptop:min-w-[50%] tablet:min-w-[50%] smallMobile:min-w-[100%] flex-col text-center items-center text-white bg-[#0d5d82] mobile:px-[15%] smallMobile:px-[15%] p-[5%] laptop:px-p-[5%] tablet:px-[5%]">
+                className="flex min-w-[50%] pb-10 laptop:min-w-[50%] tablet:min-w-[50%] smallMobile:min-w-[100%] flex-col text-center items-center text-white bg-[#0d5d82] mobile:px-[15%] smallMobile:px-[15%] p-[5%] laptop:px-p-[5%] tablet:px-[5%]">
                             <p className="font-bold font-sans text-6xl mb-5 opacity-30">Guests Attire</p>
                             <p className="font-light text-xl pb-10">Formal</p>
                             <p className="font-bold text-2xl opacity-50">Color Motif</p>
-                            <div className="flex flex-row pt-5">
+                            <div className="flex flex-row gap-2 pt-5">
                                 <div className="h-[40px] w-[40px] rounded-full bg-[#a66869]" />
                                 <div className="h-[40px] w-[40px] rounded-full bg-[#c5adad]" />
                                 <div className="h-[40px] w-[40px] rounded-full bg-[#e0e1dc]" />
