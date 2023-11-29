@@ -58,20 +58,15 @@ function CardPage () {
             </div> */}
             <div className="z-30 relative min-w-[1700px] desktop:min-w-full laptop:w-screen">
                 <div className="absolute w-screen mt-10 z-20">
-                    <div className="flex flex-col w-screen mt-[-40px] items-center font-sans text-[white] mb-20 font-extrabold z-40 py-[10px] py-3">
+                    <div className="flex flex-col w-screen mt-[-40px] items-center font-sans text-[white] mb-12 font-extrabold z-40 py-[10px] py-3">
                         <div className="flex flex-col laptop:flex-row items-center justify-center ">
-                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[4em]  rounded-md">{daysCount}</span>
+                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[5em]  rounded-md">{daysCount}</span>
                         <span className="font-light mt-[-30px] opacity-30">DAYS</span>
-                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[4em] rounded-md">{hoursCount}</span>
+                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[5em] rounded-md">{hoursCount}</span>
                         <span className="font-light mt-[-30px] opacity-30">HOURS</span>
-                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[4em] rounded-md">{minutesCount}</span>
+                        <span className="drop-shadow-lg opacity-30 py-3 text-center laptop:text-[12em] tablet:text-[9em] mobile:text-[7em] text-[12em] smallMobile:text-[5em] rounded-md">{minutesCount}</span>
                         <span className="font-light mt-[-30px] opacity-30">MIN</span>
                        </div>
-                        {/* <div className="flex gap-[19em] mt-[-55px]">
-                        <span className="font-light">DAYS</span>
-                        <span className="font-light">HOURS</span>
-                        <span className="font-light">MIN</span>
-                        </div> */}
                     </div>
                     <motion.div
                         initial={{ opacity: 0, y:"-200px"}}
